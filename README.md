@@ -24,4 +24,4 @@ Code to reproduce Soenksen, LR. et al 2020, on Science Translational Medicine
 > Wide-field imaging and deep neural networks are used to facilitate the accurate detection of suspicious and salient pigmented lesions to allow for convenient skin screenings at the primary care level.
 
 #### MODELS (Direct Download)
-> Due to egress limits on GIT, this repo requires that you download the following "Outputs" folder, which includes the trained Deep Convolutional Neural Network (DCNN) model weight files directly from this link: https://www.dropbox.com/s/crib0kyjl5z0vli/output.zip?dl=0. After download place in the main project folder and unzip.
+> Due to egress limits on GIT, this repo requires that you download the following "Outputs" folder, which includes the trained Deep Convolutional Neural Network (DCNN) model weight files directly from this link: https://www.dropbox.com/s/n0aj1ezzh99uyjd/Models.zip?dl=0. After download place in the main project folder and unzip.
