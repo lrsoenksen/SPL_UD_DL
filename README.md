@@ -1,5 +1,5 @@
 # Deep Learning for Dermatologist-Level Detection of Ugly-Duckling (UD) and Suspicious Pigmented Skin Lesions (SPL) from Wide-Field Images
-Code to reproduce Soenksen, LR. et al 2021, on Science Translational Medicine https://static1.squarespace.com/static/5c264953620b850c9fb03732/t/602d85e4d46da532404689f2/1613596138740/stm_luis.pdf).
+Code to reproduce [Soenksen, LR. et al 2021, on Science Translational Medicine](https://static1.squarespace.com/static/5c264953620b850c9fb03732/t/602d85e4d46da532404689f2/1613596138740/stm_luis.pdf).
 
 ![Image description](src/notebook_imgs/SPL_UD_DL_Fig1.jpg)
 
