@@ -23,5 +23,8 @@ Code to reproduce [Soenksen, LR. et al 2021, on Science Translational Medicine](
 #### PROBLEM/SOLUTION DEFINITION
 > Wide-field imaging and deep neural networks are used to facilitate the accurate detection of suspicious and salient pigmented lesions to allow for convenient skin screenings at the primary care level.
 
+#### DATASET (Direct Download)
+> All data has been de-identified and randomized to comply with MIT data sharing policies. Due to egress limits on GIT, this repo requires that you download the "Wide-field" and "close-up" Dataset directly from this link: https://www.dropbox.com/sh/wf4cqy5odiborbq/AAAkgUHeaYELYbq-93gkOWZca?dl=0. Data and code are provided ONLY for non-commertial purposes. After download place in the main project folder to use with the provided code.
+ 
 #### MODELS (Direct Download)
 > Due to egress limits on GIT, this repo requires that you download the following "Outputs" folder, which includes the trained Deep Convolutional Neural Network (DCNN) model weight files directly from this link: https://www.dropbox.com/s/n0aj1ezzh99uyjd/Models.zip?dl=0. After download place in the main project folder and unzip.
