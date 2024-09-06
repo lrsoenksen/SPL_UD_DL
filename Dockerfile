@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+# Define build argument
+ARG MINICONDA_ARCH=aarch64
+
 # Set environment variable for non-interactive installs
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -21,9 +24,13 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && apt-get clean
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py37_22.11.1-1-Linux-aarch64.sh \
-      -O /tmp/anaconda.sh && \
-      bash /tmp/anaconda.sh -b -p /opt/conda && \
+    # Conditional logic based on architecture
+RUN ARCH=$(uname -m) && echo "Architecture detected: $ARCH"
+      # x86_64   aarch64
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py37_22.11.1-1-Linux-${MINICONDA_ARCH}.sh \
+            -O /tmp/anaconda.sh
+
+RUN bash /tmp/anaconda.sh -b -p /opt/conda && \
       rm /tmp/anaconda.sh
 
       # Set environment variables for Conda
