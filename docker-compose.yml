@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - MINICONDA_ARCH=aarch64
+    
+    image: liminal_spl_05
+    
+    volumes:
+      - /Users/efrain/projects/SPL_UD_DL:/app   # Mount current directory (source code) to /app in the container
+    # command: python your_script.py

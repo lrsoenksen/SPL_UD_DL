@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+WORKDIR /app
+
 # Define build argument
 ARG MINICONDA_ARCH=aarch64
 
@@ -8,6 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install necessary dependencies
 RUN apt-get update && apt-get install -y \
+    bash \
     wget \
     bzip2 \
     ca-certificates \
@@ -22,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     libhdf5-dev \
     pkg-config \
+    ffmpeg \
     && apt-get clean
 
     # Conditional logic based on architecture
@@ -43,13 +47,11 @@ RUN conda init bash
 SHELL ["/bin/bash", "-c"]
 
 # Create conda environment with python 3.12
-RUN conda create -n myenv -c conda-forge python=3.7
+# RUN conda create -n myenv -c conda-forge python=3.7
 # Activate environment in future commands (optional)
-RUN echo "conda activate myenv" >> ~/.bashrc
+# RUN echo "conda activate myenv" >> ~/.bashrc
 
-# RUN conda install tensorflow-gpu
-RUN conda install pillow
-RUN pip install opencv-python
+# RUN conda install -c conda-forge python=3.5
 RUN pip install imutils
 RUN pip install --user cython h5py
 RUN pip install keras_tqdm
@@ -60,3 +62,9 @@ RUN conda update conda
 RUN conda install -n base conda-libmamba-solver
 RUN conda install tensorflow --solver=libmamba
 RUN pip install --user git+https://github.com/Theano/Theano.git
+RUN pip install jupyter
+RUN pip install pandas
+RUN pip install -U scikit-learn
+RUN pip install pillow==8.3.2
+RUN pip install opencv-python
+

@@ -1,0 +1,5 @@
+*.pyc
+
+output/models
+data/single_lesion_database
+data/wide_field_database
