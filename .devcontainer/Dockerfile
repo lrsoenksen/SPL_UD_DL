@@ -56,11 +56,10 @@ RUN pip install imutils
 RUN pip install --user cython h5py
 RUN pip install keras_tqdm
 RUN pip install msgpack
-RUN pip install keras-vis
+# RUN pip install keras-vis
 RUN conda clean --all
 RUN conda update conda 
 RUN conda install -n base conda-libmamba-solver
-RUN conda install tensorflow --solver=libmamba
 RUN pip install --user git+https://github.com/Theano/Theano.git
 RUN pip install jupyter
 RUN pip install pandas
@@ -68,6 +67,9 @@ RUN pip install -U scikit-learn
 RUN pip install pillow==8.3.2
 RUN pip install opencv-python
 RUN pip install tf-keras-vis
+RUN conda install tensorflow=2.10.0 --solver=libmamba
+RUN conda install keras=2.10.0
+RUN pip install matplotlib
 
 ENV DISPLAY=host.docker.internal:0
 ENV QT_X11_NO_MITSHM=1
