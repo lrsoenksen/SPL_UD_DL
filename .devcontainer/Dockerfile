@@ -67,4 +67,7 @@ RUN pip install pandas
 RUN pip install -U scikit-learn
 RUN pip install pillow==8.3.2
 RUN pip install opencv-python
+RUN pip install tf-keras-vis
 
+ENV DISPLAY=host.docker.internal:0
+ENV QT_X11_NO_MITSHM=1
