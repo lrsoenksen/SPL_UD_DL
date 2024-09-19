@@ -1,0 +1,35 @@
+services:
+  # Update this to the name of the service you want to work with in your docker-compose.yml file
+  app:
+    # Uncomment if you want to override the service's Dockerfile to one in the .devcontainer 
+    # folder. Note that the path of the Dockerfile and context is relative to the *primary* 
+    # docker-compose.yml file (the first in the devcontainer.json "dockerComposeFile"
+    # array). The sample below assumes your primary file is in the root of your project.
+    #
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        # aarch64
+        - MINICONDA_ARCH=x86_64
+        - userns=host
+
+    image: liminal_spl_05
+
+    mem_limit: 4g
+    
+    volumes:
+      # Update this to wherever you want VS Code to mount the folder of your project
+      # - /Users/efrain/projects/SPL_UD_DL:/app
+      - /home/efrain/Documents/projects/SPL_UD_DL:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+    # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
+    # cap_add:
+    #   - SYS_PTRACE
+    # security_opt:
+    #   - seccomp:unconfined
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+ 

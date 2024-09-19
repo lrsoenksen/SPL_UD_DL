@@ -1,0 +1,11 @@
+*.pyc
+src/**/*.pyc
+
+output/models
+data/single_lesion_database
+data/wide_field_database
+src/convnetskeras/__pycache__
+src/saliency_map/__pycache__/__init__.cpython-37.pyc
+output/analysis
+
+data/ovio
